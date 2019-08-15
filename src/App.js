@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { GlobalStyles, H1, Box } from '@bigcommerce/big-design';
+import PaymentTabs from './components/PaymentTab';
+import PaymentPanel from './components/PaymentPanel';
+import TestCards from './components/TestCards';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <div>
+    <GlobalStyles />
+    <Box backgroundColor="secondary20" padding="xxLarge">
+
+      <H1>Payment Methods</H1>
+
+      <PaymentTabs />
+
+      <PaymentPanel name="Offline Payment Methods" linkVisible="1 visible on storefront"/>
+      <PaymentPanel name="Online Payment Methods" linkVisible="1 visible on storefront"/>
+      <PaymentPanel name="Digital Wallets" />
+
+      <TestCards /> 
+    </Box>
+   </div> 
+ );
 }
 
 export default App;
